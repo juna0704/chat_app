@@ -3,29 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>myChat</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="styles.css" />
+    <title>WeChat</title>
   </head>
   <body>
-    <h1>WeChat 💬</h1>
+    <h1 class="title">💬 WeChat</h1>
     <div class="main">
-      <div class="name">
-        <span class="icon"><i class="far fa-user"></i></span>
+      <div class="head-name" id="head-name">
+        <span>
+          <i class="far fa-user"> </i>
+        </span>
         <input
           type="text"
-          value="anonymous"
           class="name-input"
           id="name-input"
-          maxlength="25"
+          value="anonymous"
+          maxlength="20"
         />
       </div>
-      <div class="container"></div>
+
+      <ul class="message-container" id="message-container">
+        <li class="left-message">
+          <p>lorem ipsum <span>bluebird ● 26 July 10:40</span></p>
+        </li>
+        <li class="right-message">
+          <p>
+            lorem ipsum lorem ipsum lorem ipsum
+            <span>bluebird ● 26 July 10:40</span>
+          </p>
+        </li>
+        <li class="message-feedback">
+          <p>lorem ipsum <span>bluebird ● 26 July 10:40</span></p>
+        </li>
+      </ul>
+
+      <form class="message-form" id="message-form">
+        <input
+          type="text"
+          class="message-input"
+          id="message-input"
+          name="message-input"
+        />
+        <div class="v-divider"></div>
+        <button type="submit" class="send-button">
+          send <span><i class="fas fa-paper-plane"></i></span>
+        </button>
+      </form>
     </div>
+    <h3 class="clients-total" id="client-total">Total clients: 2</h3>
+    <script src="/socket.io/socket.io.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"
+      integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
   </body>
 </html>
