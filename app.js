@@ -35,4 +35,10 @@ function connectedSocket(socket) {
     socketsConnected.delete(socket.id);
     io.emit("clients-total", socketsConnected.size);
   });
+
+  socket.on("message", (data) => {
+    socket.broadcast.emit("chat-messages", data);
+  });
+
+  socket.on("feedback", (data) => [socket.broadcast.emit("feed", data)]);
 }
